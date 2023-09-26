@@ -1,4 +1,4 @@
-## 💻 Tecnology
+## 💻 Technology
 
 - [React.js](https://reactjs.org) (v18)
 - [Next.js](https://nextjs.org) (v13)
