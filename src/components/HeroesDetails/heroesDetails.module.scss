@@ -1,0 +1,50 @@
+.title {
+  font-size: 3.5rem;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.details {
+  border-top: solid 1px rgba(255,255,255,0.5);
+  margin: 1rem 0;
+  padding: 1rem 0;
+  width: 70%;
+  .listDetails {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    li {
+      font-weight: 600;
+      padding-right: 2rem;
+      &.break {
+        flex-basis: 100%;
+        height: .5rem;
+      }
+    }
+    .label {
+      font-weight: normal;
+      min-width: 9.5rem;
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .title {
+    font-size: 2.5rem;
+  }
+  .details { 
+    width: inherit;
+  }
+  .subtitle, .details {
+    font-size: 1.5rem;
+  }
+  .details .listDetails .label {
+    min-width: 4rem;
+  }
+  }

@@ -4,7 +4,7 @@ export interface IHeroesData {
   universe: number;
   details: {
     fullName: string;
-    birsthday: string;
+    birthday: string;
     homeland: string;
     height: number;
     weight: number;

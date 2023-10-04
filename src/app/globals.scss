@@ -2,8 +2,11 @@
 
 :root {
   height: 100vh;
+  transition: background 1s ease-in-out;
+  background-size: cover;
+  background-repeat: no-repeat;
 
-  &::before {
+  &:not(.hero-page)::before {
     content: "";
     background: $background;
     height: 100%;
@@ -31,4 +34,15 @@ header {
   margin: 0 auto;
   position: relative;
   z-index: 4;
+  gap: 2rem;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+@media screen and (max-width:768px) {
+  :root, body {
+    height: auto;
+    overflow: inherit;
+  }
 }

@@ -32,6 +32,10 @@
     height: 100%;
     object-fit: contain;
     object-position: bottom;
+    @media screen and (max-width: 768px) {
+      filter: blur(2px);
+      opacity: 0.7;
+    }
   }  
    &.spider-man-616 {
       height: $spider-man-616-height
@@ -55,4 +59,106 @@
       height: $sp-dr-14512-height;
     }
 }
-
+.carousel {
+  position: absolute;
+  top: 50px;
+  width: 100%;
+  height: calc(100vh - 350px);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  .image {
+    position: absolute;
+    z-index: 3;
+    width: 100vw;
+    text-align: center;
+    
+    a{
+      display: inline-block;
+      height: 100%;
+      vertical-align: bottom;
+    }
+    img {
+      width: 50%;
+      object-position: bottom;
+    }
+  }
+  .nav {
+    list-style: none;
+    position: relative;
+    width: 100%;
+    margin:0;
+    padding: 0;
+    li{
+      position: absolute;
+      top: -6vh;
+      width:20px;
+      height: 20px;
+      z-index: 4;
+      &::before {
+        width: 0;
+        height: 0;
+        border-style: solid;
+        content: "";
+        position: absolute;
+        
+      }
+      &::after {
+        width: 0;
+        height: 0;
+        border-style: solid;
+        content: "";
+        position: absolute;
+      }
+      &.right{
+        right:50px;
+        &::before {
+          border-width: 10px 0 10px 20px;
+          border-color: transparent transparent transparent #fff;
+          left: 0;
+        }
+        &::after {
+          border-width: 10px 0 10px 20px;
+          border-color: transparent transparent transparent #0060d1;
+          left: -3px;
+        }
+      }
+      &.left {
+        left:50px;
+        &::before {
+          left: -3px;
+          border-width: 10px 20px 10px 0;
+          border-color: transparent #fff transparent transparent;
+        }
+        &::after {
+          border-width: 10px 20px 10px 0;
+          border-color: transparent #0060d1 transparent transparent;
+        }
+      }
+    } 
+  }
+  .dots {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    bottom: -50px;
+    position: absolute;
+    z-index: 5;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
+    li {
+      border-radius: 100%;
+      border: solid 1px #fff;
+      width: 5px;
+      height: 5px;
+      padding: 2px;
+      span{
+        display: block;
+        background: #fff;
+        height: 5px;
+      }
+    }
+  }
+}
