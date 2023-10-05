@@ -31,6 +31,14 @@ export default function Carousel({heroes, activeId}: Iprops) {
   const transitionAudio = useMemo(() => new Audio("/songs/transition.mp3"), []);
   
   const wScreen = window.innerWidth;
+
+  const [max, setMax] = useState(0)
+
+    useEffect(() => {
+
+        setMax(window.innerWidth)
+        
+    }, [])
   
   const voicesAudio: Record<string, HTMLAudioElement> = useMemo(
     () => ({
@@ -127,7 +135,7 @@ export default function Carousel({heroes, activeId}: Iprops) {
         >
           <AnimatePresence mode="popLayout">
             {visibleItems.map((item, position) => (
-              wScreen < 768 ? (
+              max < 768 ? (
                 <motion.div 
                   key={item.id} 
                   className={styles.hero}

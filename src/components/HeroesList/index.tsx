@@ -17,7 +17,13 @@ interface Iprops {
 
 export default function HeroesList({ heroes }: Iprops) {
   
-  const widthScrenn = window.innerWidth;
+  const [max, setMax] = useState(0)
+
+    useEffect(() => {
+
+        setMax(window.innerWidth)
+        
+    }, [])
   const [visibleItems, setVisibleItems] = useState<IHeroesData[] | null>(null);
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const [startInterationPosition, setStartInterationPosition] = useState<number>(0);
@@ -59,7 +65,7 @@ export default function HeroesList({ heroes }: Iprops) {
       >
         Personagens
       </motion.h1>
-      {widthScrenn < 768 && (
+      {max < 768 && (
           <section className={styles.carousel}>
             <ul className={styles.nav}>
               <li className={styles.left} onClick={() => handleChangeActiveIndex(-1)}></li>
