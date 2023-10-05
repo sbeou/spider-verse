@@ -174,6 +174,7 @@ export default function Carousel({heroes, activeId}: Iprops) {
 }
 
 const getItemStyle = (position: enPosition) => {
+  
   if (window.innerWidth < 768) {
     if (position === enPosition.FRON) {
       return {
