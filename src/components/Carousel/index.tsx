@@ -29,8 +29,6 @@ export default function Carousel({heroes, activeId}: Iprops) {
   const [startInterationPosition, setStartInterationPosition] = useState<number>(0);
 
   const transitionAudio = useMemo(() => new Audio("/songs/transition.mp3"), []);
-  
-  const wScreen = window.innerWidth;
 
   const [max, setMax] = useState(0)
 
